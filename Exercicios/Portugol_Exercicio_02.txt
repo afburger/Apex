@@ -1,0 +1,9 @@
+valor = 5
+SE o valor é maior que 0, ele é posivo
+ENTÃO SE valor menor que zero, ele négativo
+SE NÃO é zero
+
+
+
+
+

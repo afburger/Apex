@@ -1,0 +1,10 @@
+numero = 7
+
+Se o numero / 10 e o resto da divisão for zero, ele é divisivel por 10
+
+Se o numero / 5 e o resto da divisão for zero, ele é divisivel por 5
+
+Se o numero / 2 e o resto da divisão for zero, ele é divisivel por 2
+
+SE não for divisivel por nenhum, imprime que não é possível dividir.
+

@@ -1,0 +1,7 @@
+1º verifico se o meu triangulo tem todos os lados iguais
+
+SE ele tiver todos os lados iguais, ele é um triangulo Equilátero.
+
+OU ENTAO, SE ele tiver todos os lados diferentes, ele é um triangulo escaleno
+
+SE NÃO ele e um triangulo isósceles.
