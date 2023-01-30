@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+
+    <script>
+        // Exercício A
+        document.write("Letra A:");
+        document.write("<br>");
+
+        var nota1 = 9;
+        var nota2 = 6;
+
+        var media = (nota1 + nota2) / 2;
+
+        if (media >= 7) {
+            document.write("O Aluno Fulando foi Apovado com a média: " + media);
+        } else {
+            document.write("O Aluno Fulando foi Reprovado com a média: " + media);
+        }
+
+        document.write("<br>")
+
+        // Exercício B
+        document.write("Letra B:")
+        document.write("<br>")
+
+        var valor1 = 2;
+        var valor2 = 2;
+        var resultado;
+
+        // Valida se os valores são iguais
+        if (valor1 == valor2) {
+            // Soma os valores se forem iguais
+            resultado = valor1 + valor2;
+        } else {
+            // Multiplica os valores se forem diferentes.
+            resultado = valor1 * valor2;
+        }
+        // Imprime o resultado na tela
+        document.write(resultado);
+
+        document.write("<br>")
+
+        // Exercício C Versão 1
+        document.write("Letra C:(Versão 1.0)")
+        document.write("<br>")
+
+        const codigoPizza = 1;
+        const codigoPaoQueijo = 2;
+        const codigoMacarrao = 3;
+
+        const valorPizza = 12;
+        const valorPaoQueijo = 4;
+        const valorMacarrao = 16;
+
+        var codigoProduto = 2;
+        var valorPago = 10;
+
+        // Compara o código do produto.
+        if (codigoProduto == codigoPizza) {
+            // Se for o produto 1 - Pizza.
+
+            // Comparar se o valor pago é maior que o valor da pizza.
+            if (valorPago > valorPizza) {
+                // Apresenta o valor do troco calculado.
+                document.write("O valor do troco é de: " + (valorPago - valorPizza));
+            } else if (valorPago < valorPizza) {
+                // Se o valor pago, for menor que o valor da Pizza (12,00)
+                document.write("Valor pago é insuficiente!");
+            } else {
+                // Se não cair em nenhuma das duas condições anteriores, 
+                // considera que o pagamento foi efetuado com sucesso.
+                document.write("Pagamento concluído com sucesso!");
+            }
+        }
+
+        if (codigoProduto == codigoPaoQueijo) {
+            if (valorPago > valorPaoQueijo) {
+                document.write("O valor do troco é de :" + (valorPago - valorPaoQueijo));
+            } else if (valorPago < valorPaoQueijo) {
+                document.write("Valor pago é insuficiente!");
+            } else {
+                document.write("Pagamento concluído com sucesso!");
+            }
+        }
+
+        if (codigoProduto == codigoMacarrao) {
+            if (valorPago > valorMacarrao) {
+                document.write("O valor do troco é de:" + valorPago - valorMacarrao);
+            } else if (valorPago < valorMacarrao) {
+                document.write("Valor pago é insuficiente!");
+            } else {
+                document.write("Pagamento concluído com sucesso!");
+            }
+        }
+
+        document.write("<br>")
+
+        // Exercício C Versão 2
+        document.write("Letra C (Versão 2.0):")
+        document.write("<br>")
+
+        const codPizza = 1;
+        const codPaoQueijo = 2;
+        const codMacarrao = 3;
+
+        const vlrPizza = 12;
+        const vlrPaoQueijo = 4;
+        const vlrMacarrao = 16;
+
+        var vlrPago = 50;
+        var codProduto = 2;
+
+        var vlrTroco;
+
+        if (codProduto == codPizza) {
+            vlrTroco = vlrPago - vlrPizza;
+        } else if (codProduto == codPaoQueijo) {
+            vlrTroco = vlrPago - vlrPaoQueijo;
+        } else if (codProduto == codMacarrao) {
+            vlrTroco = vlrPago - vlrMacarrao;
+        } else {
+            document.write("Produto inválido");
+        }
+
+        if (vlrTroco > 0) {
+            document.write("O valor do troco é de:" + vlrTroco);
+        } else if (vlrTroco == 0) {
+            document.write("Pagamento concluído com sucesso!");
+        } else {
+            document.write("Valor pago é insuficiente!");
+        }
+
+        document.write("<br>")
+
+        // Exercício D
+        document.write("Letra D:")
+        document.write("<br>")
+
+        var numero1 = 9;
+        var numero2 = 25;
+        var numero3 = 3;
+
+        if (numero1 < numero2 && numero1 < numero3) {
+            document.write("O menor número é o primeiro número:" + numero1);
+        } else if (numero2 < numero1 && numero2 < numero3) {
+            document.write("O menor número é o segundo número:" + numero2);
+        } else {
+            document.write("O menor número é o terceiro número:" + numero3);
+        }
+
+        document.write("<br>")
+
+        // Exercício E
+        document.write("Letra E:")
+        document.write("<br>")
+
+        var direito = 3;
+        var esquerdo = 1;
+        var inferior = 3;
+
+        if (direito == esquerdo && direito == inferior) {
+            document.write("É um triangulo Equilátero");
+        } else if (direito != esquerdo && direito != inferior && esquerdo != inferior) {
+            document.write("É um triangulo Escaleno");
+        } else {
+            document.write("É um triangulo Isósceles");
+        }
+
+        document.write("<br>")
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Extra</title>
+
+    <script>
+        // Exercício 1
+        document.write("Número 1:");
+        document.write("<br>");
+
+        var numeroMenor = -3;
+       
+        if (numeroMenor > 0) {
+            document.write("Número positivo");
+        } else if (numeroMenor < 0) {
+            document.write("Número negativo");
+        } else {
+            document.write("O número é zero");
+        }
+
+
+        document.write("<br>")
+
+        // Exercício 2
+        document.write("Número 2:")
+        document.write("<br>")
+
+        var numero = 10;
+        const divisor10 = 10;
+        const divisor5 = 5;
+        const divisor2 = 2;
+
+        var imprimiu = false;
+
+        if ((numero % divisor10) == 0) {
+            document.write("O número " + numero +  " é divisivel por 10");
+            imprimiu = true;
+            document.write("<br>")
+        }
+
+        if ((numero % divisor5) == 0) {
+            document.write("O número " + numero +  " é divisivel por 5");
+            imprimiu = true;
+            document.write("<br>")
+        }
+
+        if ((numero % divisor2) == 0) {
+            document.write("O número " + numero +  " é divisivel por 2");
+            imprimiu = true;
+            document.write("<br>")
+        }
+        
+        if (!imprimiu) {
+            document.write("O número " + numero +  " não é possível dividir por 10, 5 ou 2");
+        }
+
+        document.write("<br>")
+
+
+        // Exercício 3
+        document.write("Número 3:")
+        document.write("<br>")
+
+        var turno = "X";
+
+        const matutino = "M";
+        const vespertino = "V";
+        const noturno = "N";
+
+        if (turno == matutino || turno == vespertino) {
+            document.write("Bom dia!");
+        } else if (turno == noturno) {
+            document.write("Boa noite!")
+        } else {
+            document.write("Você informou um valor inválido");
+        }
+        
+
+        document.write("<br>")
+
+        // Exercício 4
+        document.write("Número 4:")
+        document.write("<br>")
+
+        var x = 50;
+        var y = 3;
+        var resposta;
+
+        var z = (x * y) + 5;
+
+        if (z <= 0) {
+            resposta = "A";
+        } else {
+            if (z <= 100) {
+                resposta = "B";
+            } else {
+                resposta = "C";
+            }
+        }
+
+        document.write("O valor de Z é: " + z);
+        document.write("<br>")
+        document.write("A resposta é letra: " + resposta);
+        
+
+        document.write("<br>")
+
+        // Exercício 5
+        document.write("Número 5:")
+        document.write("<br>")
+
+        const porIdade = 65;
+        const porTempoTrabalho = 30;
+        const idadePorTempo = 60;
+        const tempoPorTempo = 25;
+
+        var anoNascimento = 1990;
+        var anoIngresso = 2010;
+
+        var idade = 2023 - anoNascimento;
+        var tempoTrabalho = 2023 - anoIngresso;
+
+        if (idade >= porIdade 
+        || tempoTrabalho >= porTempoTrabalho 
+        || (idade >= idadePorTempo && tempoTrabalho >= tempoPorTempo)) {
+            document.write("Colaborador apto para se aposentar!");
+        } else {
+            document.write("Colaborador não está apto para se aposentar!");
+        }
+
+        document.write("<br>")
+
+        // Exercício E
+        document.write("Número 6:")
+        document.write("<br>")
+
+        var salario = 280;
+        var reajuste;
+        var valorAumento;
+        var salarioAtualizado;
+
+        const limiteFaixa1 = 280;
+        const limiteFaixa2 = 700;
+        const limiteFaixa3 = 1500;
+
+        
+
+        document.write("<br>")
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

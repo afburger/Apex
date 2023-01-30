@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Documento Teste</title>
+
+        <script>
+            let produtos = [];
+            let produtoSelecionado;
+
+            // Função responsável por selecionar um produto
+            function listarTodos() {
+
+                var tabela = document.getElementById("tabelaProdutos");
+                var totalLinhas = tabela.rows.length;
+                
+                for(var indice=totalLinhas-1; indice > 0; indice--) {
+                    tabela.deleteRow(indice);
+                }
+
+                produtos.forEach(element => {                 
+                    var numeroLinhas = tabela.rows.length;
+                    var linha = tabela.insertRow(numeroLinhas);
+                    var celula1 = linha.insertCell(0);
+                    var celula2 = linha.insertCell(1);   
+                    var celula3 = linha.insertCell(2); 
+                    var celula4 = linha.insertCell(3); 
+
+                    celula1.innerHTML = element.nome; 
+                    celula2.innerHTML = element.marca; 
+                    celula3.innerHTML = element.valor;
+                    celula4.innerHTML = element.quantidade;
+
+                });
+            }
+
+            // Função para cadastrar um produto.
+            function cadastrar() {
+                var produto = {
+                    nome: document.getElementById("tfNome").value,
+                    marca: document.getElementById("tfMarca").value,
+                    valor: document.getElementById("tfValor").value,
+                    quantidade: document.getElementById("tfQuantidade").value,
+                }
+
+                produtos.push(produto);
+                
+                alert("Produto " + produto.nome + " cadastrado com sucesso!");
+            }
+
+            // Função responsável por selecionar um produto
+            function selecionar(nomeProduto) {
+
+            }
+
+            // Função para alterar um produto
+            function alterar() {
+
+            }
+
+            // Função para excluir um produto
+            function excluir(nomeProduto) {
+
+            }
+
+            // Função para pesquisar um produto
+            function pesquisa(nomeProduto) {
+
+            }
+
+            var x = 50;
+            var y = 3;
+            var resposta;
+
+            var z = (x * y) + 5;
+
+            if (z <= 0) {
+                resposta = "A";
+            } else {
+                if (z <= 100) {
+                    resposta = "B";
+                } else {
+                    resposta = "C";
+                }
+            }
+
+            document.write("O valor de Z é:" + z);
+            document.write("A resposta é letra: " + resposta);
+            
+            
+
+
+
+
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <input type="text" placeholder="Nome" id="tfNome">
+            <br>
+            <input type="text" placeholder="Marca" id="tfMarca">
+            <br>
+            <input type="number" placeholder="Valor" id="tfValor">
+            <br>
+            <input type="number" placeholder="Quantidade" id="tfQuantidade">
+            <br>
+            <br>
+            <input type="button" value="Listar todos" onclick="listarTodos()">
+            <br>
+            <br>
+            <input type="button" value="Cadastrar" onclick="cadastrar()">
+            <input type="button" value="Selecionar" onclick="selecionar()">
+            <input type="button" value="Alterar" onclick="alterar()">
+            <input type="button" value="Excluir" onclick="excluir()">
+        </form>
+        
+        <br>
+
+        <table id="tabelaProdutos" border="1">
+            <tr>
+              <td>Produto</td>
+              <td>Marca</td>
+              <td>Valor</td>
+              <td>Quantidade</td>
+            </tr>
+        </table> 
+        
+
+    </body>
+
+</html>
