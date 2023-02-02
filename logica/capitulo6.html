@@ -28,16 +28,16 @@
         
         document.write("Letra A:")
         document.write("<br>")
-        var temperatura = 33;
-        var conversao = "Celsius";
+        var temperatura = 28;
+        var conversao = "Fahrenheit";
 
         switch (conversao) {
             case "Celsius":
-                document.write(temperatura + "ºC");
+                document.write(((temperatura - 32) / 1.8) + " ºC");
                 break
 
             case "Fahrenheit":
-                document.write(temperatura + "ºF");
+                document.write(((temperatura * 1.8) + 32) + "ºF");
                 break
 
             default:
@@ -46,9 +46,37 @@
 
         document.write("<br>")
 
+       
 
         document.write("Letra B:")
         document.write("<br>")
+
+        var valor = 2;
+        var tipoConversao = "Euro para Real";
+
+        const REAL_DOLAR = "Real para Dólar";
+        const DOLAR_REAL = "Dólar para Real";
+        const REAL_EURO = "Real para Euro";
+        const EURO_REAL = "Euro para Real";
+
+        const VALOR_DOLAR = 5.12;
+        const VALOR_EURO = 5.55;
+
+        switch(tipoConversao) {
+            case REAL_DOLAR:
+                document.write(("Valor em dólar: " + valor / VALOR_DOLAR));
+                break
+            case DOLAR_REAL:
+                document.write(("Valor em Reais: " + valor * VALOR_DOLAR));
+                break
+            case REAL_EURO:
+                document.write(("Valor em Euro: " + valor / VALOR_EURO));
+                break
+            case EURO_REAL:
+                document.write(("Valor em Reais " + valor * VALOR_EURO));
+                break
+        }
+
 
         document.write("<br>")
 
@@ -56,17 +84,61 @@
         document.write("Letra C:")
         document.write("<br>")
 
+        var segmento = "Eletrônicos";
+        var valorProduto = 8000;
+        var produto = "Iphone";
+
+        const VESTIARIO = "Vestiário";
+        const ELETRONICOS = "Eletrônicos";
+        const ALIMENTICIO = "Alimentício";
+
+        switch(segmento) {
+            case VESTIARIO:
+                document.write(("Valor do " + produto + " com o desconto: " + valorProduto * 0.95));
+                break
+            case ELETRONICOS:
+            document.write(("Valor do " + produto + " com o desconto: " + valorProduto * 0.92));
+                break
+            case ALIMENTICIO:
+            document.write(("Valor do " + produto + " com o desconto: " + valorProduto * 0.90));
+                break
+            default:
+                document.write("Não é possível aplicar o desconto");
+        }
+
         document.write("<br>")
 
 
         document.write("Letra D:")
         document.write("<br>")
 
+
+
         document.write("<br>")
 
 
         document.write("Letra E:")
         document.write("<br>")
+
+        var voto = 3;
+
+        const CANDIDATO_1 = 1;
+        const CANDIDATO_2 = 2;
+        const CANDIDATO_3 = 3;
+
+        switch (voto) {
+            case 1:
+                document.write("O seu voto foi computado para o candidato 1!")
+                break;
+            case 2:
+                document.write("O seu voto foi computado para o candidato 2!")
+                break;
+            case 3:
+                document.write("O seu voto foi computado para o candidato 3!")
+                break;
+            default:
+                break;
+        }
 
 
         document.write("<br>")

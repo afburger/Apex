@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7 D</title>
+
+    <script>
+
+        document.write("Letra D")
+        document.write("<br>") 
+
+        // Forma 1
+        var idx = 5;
+        while (idx > 0) {
+            
+            var numeroExibicao = "";
+           
+            for (var idxFor = idx; idxFor >= 1; idxFor--) {
+                numeroExibicao = numeroExibicao + idxFor.toString();
+            }
+           
+            document.write(numeroExibicao);
+            document.write("<br>");
+
+            idx--;
+        }
+
+        // Forma 2
+        for (var idy = 5; idy > 0; idy--) {
+            var numeroExibicao = "";
+           
+           for (var idxFor = idy; idxFor >= 1; idxFor--) {
+               numeroExibicao = numeroExibicao + idxFor.toString();
+           }
+          
+           document.write(numeroExibicao);
+           document.write("<br>");
+        }
+            
+        
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
