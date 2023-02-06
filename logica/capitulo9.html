@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var monatadoras = [
+            ["Volks","Gol", "Jetta", "Amarok", "Polo", "Saveiro", "Fusca", "Brasilia"],
+            ["Honda", "Civic", "HR-V", "City"],
+            ["Ford", "Ranger", "Focus", "Fiesta", "Ka"]
+        ]
+        
+        for (idxMontadoras = 0; idxMontadoras < monatadoras.length; idxMontadoras++) {
+            
+            var carros = monatadoras[idxMontadoras];
+            
+            for (idxCarros = 0; idxCarros < carros.length; idxCarros++) {
+                document.write(carros[idxCarros]);
+                if (idxCarros == 0) {
+                    document.write(":");
+                } else {
+                    document.write(",");
+                }
+            }
+            document.write("<br>");
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
