@@ -7,8 +7,7 @@
 
         <script>
             let produtos = [];
-            let produtoSelecionado;
-
+            
             // Função responsável por selecionar um produto
             function listarTodos() {
 
@@ -19,7 +18,10 @@
                     tabela.deleteRow(indice);
                 }
 
-                produtos.forEach(element => {                 
+                for (var idxProdutos = 0; idxProdutos < produtos.length; idxProdutos++) {
+                    
+                    var produtoArray = produtos[idxProdutos];
+
                     var numeroLinhas = tabela.rows.length;
                     var linha = tabela.insertRow(numeroLinhas);
                     var celula1 = linha.insertCell(0);
@@ -27,52 +29,174 @@
                     var celula3 = linha.insertCell(2); 
                     var celula4 = linha.insertCell(3); 
 
-                    celula1.innerHTML = element.nome; 
-                    celula2.innerHTML = element.marca; 
-                    celula3.innerHTML = element.valor;
-                    celula4.innerHTML = element.quantidade;
+                    celula1.innerHTML = produtoArray[0];
+                    celula2.innerHTML = produtoArray[1];
+                    celula3.innerHTML = produtoArray[2];
+                    celula4.innerHTML = produtoArray[3];
 
-                });
+                };
             }
 
             // Função para cadastrar um produto.
             function cadastrar() {
-                var produto = {
-                    nome: document.getElementById("tfNome").value,
-                    marca: document.getElementById("tfMarca").value,
-                    valor: document.getElementById("tfValor").value,
-                    quantidade: document.getElementById("tfQuantidade").value,
+
+                var compNome = document.getElementById("tfNome");
+                var compMarca = document.getElementById("tfMarca");
+                var compValor = document.getElementById("tfValor");
+                var compQuantidade = document.getElementById("tfQuantidade");
+                var nome = compNome.value;
+                var marca = compMarca.value;
+                var valor = Number.parseFloat(compValor.value);
+                var quantidade = Number.parseInt(compQuantidade.value);
+                
+                // Valida se o produto já existe
+                var unico = validaUnicidadeProduto(nome);
+                var quantidadeValida = validaQuantidadeProduto(quantidade);
+                var valorValido = validaValorProduto(valor);
+
+                if (unico && quantidadeValida && valorValido) {
+                    var produto = [nome, marca, valor, quantidade];
+                
+                    produtos.push(produto);
+                
+                    compNome.value = null;
+                    compMarca.value = null;
+                    compValor.value = null;
+                    compQuantidade.value = null;
+
+                    alert("Produto " + nome + " cadastrado com sucesso!");
                 }
 
-                produtos.push(produto);
+                if (!unico) {
+                    alert("Já existe esse produto cadastrado");
+                }
                 
-                alert("Produto " + produto.nome + " cadastrado com sucesso!");
+                if (!quantidadeValida) {
+                    alert("Quantidade inválida");
+                }
+
+                if (!valorValido) {
+                    alert("Valor inválido para o cadastro");
+                }
+            }
+
+            function validaUnicidadeProduto(nome) {
+                for (var idxProdutos = 0; idxProdutos < produtos.length; idxProdutos++) {
+                    var prod = produtos[idxProdutos];
+                    if (prod[0] == nome) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function validaValorProduto(valor) {
+                if (valor <= 0) {
+                    return false;
+                }
+                return true;
+            }
+
+            function validaQuantidadeProduto(quantidade) {
+                if (quantidade < 1) {
+                    return false;
+                }
+                return true;
             }
 
             // Função responsável por selecionar um produto
-            function selecionar(nomeProduto) {
+            function selecionar() {
+                var nomePesquisar = document.getElementById("tfPesquisa").value;
+                var produto;
+                
+                for (var idxProdutos = 0; idxProdutos < produtos.length; idxProdutos++) {
+                    
+                    var produtoArray = produtos[idxProdutos];
+                    if (produtoArray[0] == nomePesquisar) {
+                        produto = produtoArray;
+                    }
+                }
 
+                var compNome = document.getElementById("tfNome");
+                var compMarca = document.getElementById("tfMarca");
+                var compValor = document.getElementById("tfValor");
+                var compQuantidade = document.getElementById("tfQuantidade");
+
+                compNome.value = produto[0];
+                compMarca.value = produto[1];
+                compValor.value = produto[2];
+                compQuantidade.value = produto[3];
             }
 
             // Função para alterar um produto
             function alterar() {
+                var nomePesquisar = document.getElementById("tfPesquisa").value;
+                var produto;
+                
+                for (var idxProdutos = 0; idxProdutos < produtos.length; idxProdutos++) {
+                    
+                    var produtoArray = produtos[idxProdutos];
+                    if (produtoArray[0] == nomePesquisar) {
+                        produto = produtoArray;
+                    }
+                }
 
+                var compNome = document.getElementById("tfNome");
+                var compMarca = document.getElementById("tfMarca");
+                var compValor = document.getElementById("tfValor");
+                var compQuantidade = document.getElementById("tfQuantidade");
+
+                produto[0] = compNome.value;
+                produto[1] = compMarca.value;
+                produto[2] = Number.parseFloat(compValor.value);
+                produto[3] = Number.parseInt(compQuantidade.value);
+
+                alert("Produto " + nome + " alterado com sucesso!");
             }
 
             // Função para excluir um produto
-            function excluir(nomeProduto) {
-
+            function excluir() {
+                var nomePesquisar = document.getElementById("tfPesquisa").value;
+                var indiceExclusao;
+                
+                for (var idxProdutos = 0; idxProdutos < produtos.length; idxProdutos++) {
+                    var produtoArray = produtos[idxProdutos];
+                    if (produtoArray[0] == nomePesquisar) {
+                        indiceExclusao = idxProdutos;
+                    }
+                }
+                produtos.splice(indiceExclusao, 1);
             }
 
             // Função para pesquisar um produto
-            function pesquisa(nomeProduto) {
+            function pesquisa() {
+                var nomePesquisar = document.getElementById("tfPesquisa").value;
 
-            }
-            
+                var tabela = document.getElementById("tabelaProdutos");
+                var totalLinhas = tabela.rows.length;
+                
+                for(var indice=totalLinhas-1; indice > 0; indice--) {
+                    tabela.deleteRow(indice);
+                }
 
+                for (var idxProdutos = 0; idxProdutos < produtos.length; idxProdutos++) {
+                    
+                    var produtoArray = produtos[idxProdutos];
+                    if (produtoArray[0] == nomePesquisar) {
+                        var numeroLinhas = tabela.rows.length;
+                        var linha = tabela.insertRow(numeroLinhas);
+                        var celula1 = linha.insertCell(0);
+                        var celula2 = linha.insertCell(1);   
+                        var celula3 = linha.insertCell(2); 
+                        var celula4 = linha.insertCell(3); 
 
-
-
+                        celula1.innerHTML = produtoArray[0];
+                        celula2.innerHTML = produtoArray[1];
+                        celula3.innerHTML = produtoArray[2];
+                        celula4.innerHTML = produtoArray[3];
+                    }                 
+                };
+            }            
         </script>
     </head>
 
@@ -87,10 +211,14 @@
             <input type="number" placeholder="Quantidade" id="tfQuantidade">
             <br>
             <br>
+            <input type="button" value="Cadastrar" onclick="cadastrar()">
+            <br>
+            <br>
             <input type="button" value="Listar todos" onclick="listarTodos()">
             <br>
             <br>
-            <input type="button" value="Cadastrar" onclick="cadastrar()">
+            <input type="text" placeholder="Pesquisar por nome" id="tfPesquisa">
+            <input type="button" value="Pesquisar" onclick="pesquisa()">
             <input type="button" value="Selecionar" onclick="selecionar()">
             <input type="button" value="Alterar" onclick="alterar()">
             <input type="button" value="Excluir" onclick="excluir()">

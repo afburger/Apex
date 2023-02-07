@@ -8,7 +8,77 @@
 
     <script>
 
-      
+var contatos = [];
+
+var opcao;
+do {
+    opcao = prompt("Informe a opção desejada:");
+    switch (opcao) {
+        case "cadastrar":
+            var contato = [];
+            var nome = prompt("Informe o nome do contato:");
+            var telefone = prompt("Informe o telefone do contato:");
+            contato.push(nome);
+            contato.push(telefone);
+            contatos.push(contato);
+            break;
+
+        case "selecionar":
+            var contatosPorExetenso = "";
+            for (var idxLista = 0; idxLista < contatos.length; idxLista++) {
+                contatosPorExetenso = contatosPorExetenso.concat(contatos[idxLista] + ", ");
+            }
+            alert(contatosPorExetenso);
+            break;
+            
+        case "alterar":
+            var nome = prompt("Informe o nome do contato para alteração:");
+            var novoNome = prompt("Informe o novo nome:");
+            var novoTelefone = prompt("Informe o novo telefone:");
+
+            var alterou = false;
+
+            for (var idxLista = 0; idxLista < contatos.length; idxLista++) {
+                var contato = contatos[idxLista];
+                if (contato[0] == nome) {
+                    contato[0] = novoNome;
+                    contato[1] = novoTelefone;
+                    alterou = true;
+                }
+            }
+
+            if (!alterou) {
+                alert("Contato não encontrado!");
+            } else {
+                alert("Contato atualizado com sucesso!");
+            }
+
+            break;
+
+        case "remover":
+            var nome = prompt("Informe o nome do contato que deseja remover:");
+            var removeu = false;
+            var index;
+            for (var idx = 0; idx < contatos.length; idx++) {
+                contatoArray = contatos[idx];
+                if (contatoArray[0] == nome) {
+                    index = idx;
+                    removeu = true;
+                }
+            }
+
+            if (!removeu) {
+                alert("Contato não encontrado!");
+            } else {
+                contatos.splice(index, 1);
+                alert("Contato removido com sucesso!");
+            }
+            
+            break;
+    }
+
+
+} while (opcao != "sair");
 
 
     </script>

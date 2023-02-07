@@ -8,7 +8,49 @@
 
     <script>
 
+        var idx = 0;
+        var listaNumeros = [];
+
+        do {
+            var numeros = [];
+
+            for (var idxNumeros = 0; idxNumeros < 4; idxNumeros++) {
+                var numero = Number.parseFloat(prompt("Informe um número"));
+                // Adiciona um número
+                numeros.push(numero);
+            }     
+               
+            listaNumeros.push(numeros);
+
+            // Incrementa o indice para contrar quantos cursos serão adicionados.
+            idx++;
+
+        } while (idx != 4);
       
+        var soma = 0.0;
+        var quantidadeNumeros = 0;
+
+        // Percorre a matriz de numeros para listar suas informações.
+        for (idxLinhaNumeros = 0; idxLinhaNumeros < listaNumeros.length; idxLinhaNumeros++) {
+            
+            var linhaNumeros = listaNumeros[idxLinhaNumeros];
+            
+            for (idxNum = 0; idxNum < linhaNumeros.length; idxNum++) {
+                var num = linhaNumeros[idxNum];
+                document.write(num + " ");               
+                soma = soma + num;
+                quantidadeNumeros++;
+            }  
+            document.write("<br>");
+            
+        }
+
+        var media = soma / quantidadeNumeros;    
+
+        document.write("<br>");
+        document.write("A soma dos números informados é: " + soma);
+        document.write("<br>");
+        document.write("A média dos números informados é: " + media);
 
 
     </script>

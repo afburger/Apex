@@ -7,8 +7,38 @@
     <title>Exercicio 9 B</title>
 
     <script>
+        var idx = 1;
+        var listaCursos = [];
 
+        do {
+            var curso = [];
+
+            var nomeCurso = prompt("Informe o nome do curso");
+            var valor = Number.parseFloat(prompt("Informe o valor do curso"));
+
+            // Adiciona o nome do curso
+            curso.push(nomeCurso);
+            // Adiciona o valor do curso
+            curso.push(valor);
+
+            listaCursos.push(curso);
+
+            // Incrementa o indice para contrar quantos cursos serão adicionados.
+            idx++;
+        } while (idx != 4);
       
+        // Percorre a matriz de cursos para listar suas informações.
+        for (idxCursos = 0; idxCursos < listaCursos.length; idxCursos++) {
+            
+            var curso = listaCursos[idxCursos];
+            
+            for (idxCur = 0; idxCur < curso.length; idxCur++) {
+                document.write(curso[idxCur] + " ");               
+            }
+
+            document.write("<br>");
+
+        }
 
 
     </script>

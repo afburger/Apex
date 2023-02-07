@@ -8,10 +8,92 @@
 
     <script>
 
-      
+        var estoqueMercado = [
+            [1, "Macarrão", 3.50],
+            [2, "Feijão", 7.30],
+            [3, "Óleo de Soja", 8.45],
+            [4, "Arroz", 4.29],
+            [5, "Trigo", 8.39],
+        ];
+                     
+        
+        // Vai imprimeir os produtos.
+        var tabela = document.getElementById("tabelaProdutos");
 
+        document.write("<table id=\"tabelaProdutos\" border=\"1\" onload=\"listar()\">");
+            document.write("<tr>");
+                document.write("<td>Código</td>");
+                document.write("<td>Produto</td>");
+                document.write("<td>Valor</td>");
+            document.write("</tr>");
+        
+        for(var idxEstoque = 0; idxEstoque < estoqueMercado.length; idxEstoque++) {
+            var itemEstoque = estoqueMercado[idxEstoque];
+
+            document.write("<tr>");
+                document.write("<td>"+ itemEstoque[0]+ "</td>");
+                document.write("<td>"+ itemEstoque[1]+ "</td>");
+                document.write("<td>"+ itemEstoque[2]+ "</td>");
+            document.write("</tr>");
+            
+        };
+
+        document.write("</table>");
+
+        var itensComprados = [];
+    
+        do {
+            var codigo = Number.parseInt(prompt("Informe o código do produto"));
+            if (codigo != 0) {
+                var quantidade = Number.parseFloat(prompt("Informe a quantidade do produto"));
+
+                var indiceEstoque = codigo - 1;
+                var itemEstoque = estoqueMercado[indiceEstoque];
+
+                var valorTotal = itemEstoque[2] * quantidade;
+
+                var itemComprado = [itemEstoque[1], quantidade, itemEstoque[2], valorTotal];
+                
+                itensComprados.push(itemComprado);
+                
+        } 
+
+        } while (codigo != 0);
+
+
+        document.write("<table id=\"tabelaItensComprados\" border=\"1\" onload=\"listar()\">");
+            document.write("<tr>");
+                document.write("<td>Produto</td>");
+                document.write("<td>Quantidade</td>");
+                document.write("<td>Valor unitário</td>");
+                document.write("<td>Valor total</td>");
+            document.write("</tr>");
+        
+        var soma = 0.0;
+
+        for(var idxCompras = 0; idxCompras < itensComprados.length; idxCompras++) {
+            var itemComprado = itensComprados[idxCompras];
+
+            var valorTotalItem = itemComprado[3];
+            soma = soma + valorTotalItem;
+
+            document.write("<tr>");
+                document.write("<td>"+ itemComprado[0]+ "</td>");
+                document.write("<td>"+ itemComprado[1]+ "</td>");
+                document.write("<td>"+ itemComprado[2]+ "</td>");
+                document.write("<td>"+ valorTotalItem + "</td>");
+            document.write("</tr>");
+            
+        };
+
+        document.write("<tr>");
+            document.write("<td>Total........</td>");
+            document.write("<td>"+ soma + "</td>");
+        document.write("</tr>");
+        document.write("</table>");
 
     </script>
+
 </head>
 <body>
     
