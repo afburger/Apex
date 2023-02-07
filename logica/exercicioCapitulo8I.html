@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8 I</title>
+
+    <script>
+
+        var cursos = [];
+
+        var opcao;
+        do {
+            opcao = prompt("Informe a opção desejada:");
+            switch (opcao) {
+                case "cadastrar":
+                    var curso = prompt("Informe o nome do curso:");
+                    cursos.push(curso);
+                    break;
+
+                case "selecionar":
+                    var cursosPorExetenso = "";
+                    for (var idx = 0; idx < cursos.length; idx++) {
+                        //document.write(cursos[idx] + "<br>");
+                        cursosPorExetenso = cursosPorExetenso.concat(cursos[idx] + ", ");
+                    }
+                    alert(cursosPorExetenso);
+                    break;
+
+
+                case "remover":
+                    var curso = prompt("Informe o nome do curso que deseja remover:");
+                    var removeu = false;
+                    var index;
+                    for (var idx = 0; idx < cursos.length; idx++) {
+                        nomeCursoArray = cursos[idx];
+                        if (curso == nomeCursoArray) {
+                            index = idx;
+                            removeu = true;
+                        }
+                    }
+
+                    if (!removeu) {
+                        alert("Curso não encontrado!");
+                    } else {
+                        cursos.splice(index, 1);
+                        alert("Curso removido com sucesso!");
+                    }
+                    
+                    break;
+            }
+
+
+        } while (opcao != "sair");
+
+
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8 F</title>
+
+    <script>
+
+        var idx = 0;
+        var numeros = [];
+        var soma = 0;
+
+        do {
+            var num = Number(prompt("Informe um número"));
+            numeros.push(num);
+            
+            soma = soma + num;
+
+            idx++;   
+
+        } while (idx != 7);
+       
+
+        var media = (soma / 7);
+
+        var numerosIguais = 0;
+        var numerosMaiores = 0;
+
+        for (var idxFor = 0; idxFor < numeros.length; idxFor++) {
+            var numeroArray = numeros[idxFor];
+            
+            // Vai somar se o número, for maior que a média.
+            if (numeroArray > media) {
+                numerosMaiores++;
+            }           
+
+            // Vai somar se o número, for igual a média.
+            if (numeroArray == media) {
+                numerosIguais++;
+            }
+        }
+        
+        document.write("A média é: " + media + " <br>");
+
+        document.write("Foram informados " + numerosIguais + " números iguais a média" + "<br>");
+        document.write("Foram informados " + numerosMaiores + " números maiores que a média" + "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

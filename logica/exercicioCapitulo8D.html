@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8 D</title>
+
+    <script>
+
+        var idx = 1;
+        var numeros = [];
+
+        do {
+            var num = prompt("Informe um número");
+            numeros.push(Number(num))
+            
+            idx++;   
+
+        } while (idx != 6);
+       
+
+        // Percorre a lista de números informada ao contrário, usando a opção de decrementar o indice.
+        for (var idxFor = (numeros.length - 1); idxFor >= 0; idxFor--) {
+            var numeroArray = numeros[idxFor];
+            document.write(numeroArray + "<br>");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

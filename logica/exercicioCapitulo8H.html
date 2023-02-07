@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8 H</title>
+
+    <script>
+
+        var idx = 1;
+        var numeros = [];
+
+        do {
+            var num = prompt("Informe um número");
+            numeros.push(Number(num))
+            
+            idx++;   
+
+        } while (idx != 6);
+       
+
+        var menorNumero = 0;
+        var maiorNumero = 0;
+        var primeiraVez = true;
+
+        for (var idxFor = 0; idxFor < numeros.length; idxFor++) {
+                       
+            var numeroArray = numeros[idxFor];
+
+            if (primeiraVez) {
+                menorNumero = numeroArray;
+                maiorNumero = numeroArray;
+                primeiraVez = false;
+            } else {
+                if (numeroArray >= maiorNumero) {
+                    maiorNumero = numeroArray;
+                }
+
+                if (numeroArray <= menorNumero) {
+                    menorNumero = numeroArray;
+                }
+            }
+
+            document.write(numeroArray + "<br>");
+            
+        }
+
+        document.write("O menor número é: " + menorNumero + "<br>");
+        document.write("O maior número é: " + maiorNumero);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

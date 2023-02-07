@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8 G</title>
+
+    <script>
+
+        var produtos = ["Marcarrão", "Arroz", "Feijão", "Café", "Açúcar", "Trigo", "Óleo", "Biscoito", "Sal", "Gelatina"];
+        var valores = [1.50, 3, 7, 5.5, 4.20, 11, 7.75, 3,50, 5.60, 2.30];
+
+        var produtosAdquiridos = [];
+        var num;
+
+        do {
+            num = prompt("Informe o código do produto");
+            if (num != 11) {
+                produtosAdquiridos.push(Number(num)-1)
+            }
+
+        } while (num != 11);
+
+        var totalCompra = 0;
+
+        for (var idx = 0; idx < produtosAdquiridos.length; idx++) {
+            // Mantém o indice do produto no array de produtos e valores.
+            var indiceCardapio = produtosAdquiridos[idx];
+
+            var produto = produtos[indiceCardapio];
+            var codProduto = indiceCardapio + 1;
+            var precoItem = valores[indiceCardapio];
+
+            document.write("Indice do produto: " + indiceCardapio + " Código do produto " + codProduto + " Produto: "+ produto + " Preço: " + precoItem);
+            document.write("<br>");
+            // Soma o valor do item no total da compra.
+            totalCompra = totalCompra + precoItem;
+
+        }
+        
+        document.write("O Valor total da compra é de: " + totalCompra)
+        
+       
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

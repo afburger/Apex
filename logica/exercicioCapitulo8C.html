@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8 C</title>
+
+    <script>
+
+        var idx = 1;
+        var nomes = [];
+
+        var nome;
+        do {
+            nome = prompt("Informe um nome");
+            // Só vai adicionar o nome na lista se não for o sair.
+            if (nome != "sair") {
+                nomes.push(nome);
+            }
+            
+            idx++;   
+
+        } while (nome != "sair");
+
+        var quantidadeNomes = nomes.length;
+        
+        // Percorre o array para imprimir os nomes
+        for (var idxFor = 0; idxFor < nomes.length; idxFor++) {
+            var nomeImprimir = nomes[idxFor];
+            document.write(nomeImprimir + "<br>");
+        }
+       
+        // Imprime a quantidade de nomes
+        document.write(quantidadeNomes);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
