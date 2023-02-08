@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão Lógica e Algoritmos</title>
+
+    <script>
+
+        const valorDolar = 5.20;
+        const valorEuro = 5.57;
+
+        var valorInformado = 50;
+        var tipoConversao = "Real para Dólar";
+
+        var resultado;
+
+        if (tipoConversao == "Real para Dólar") {
+            resultado = valorInformado / valorDolar;
+            document.write("O valor em dólar é: " + resultado);
+        } else if (tipoConversao == "Dólar para Real") {
+            resultado = valorInformado * valorDolar;
+            document.write("O valor em reais é: " + resultado);
+        } else if (tipoConversao == "Real para Euro") {
+            resultado = valorInformado / valorEuro;
+            document.write("O valor em euro é: " + resultado);
+        } else if (tipoConversao == "Euro para Real") {
+            resultado = valorInformado * valorEuro;
+            document.write("O valor em reais é: " + resultado);
+        } else {
+            document.write("Não encontramos o tipo de conversão desejado");
+        }
+
+        document.write("<br>");
+
+        var valor = 50;
+        var tipoConversao = "Real para Dólar";
+
+        const REAL_DOLAR = "Real para Dólar";
+        const DOLAR_REAL = "Dólar para Real";
+        const REAL_EURO = "Real para Euro";
+        const EURO_REAL = "Euro para Real";
+
+        const VALOR_DOLAR = 5.20;
+        const VALOR_EURO = 5.57;
+
+        switch(tipoConversao) {
+            case REAL_DOLAR:
+                document.write(("Valor em dólar: " + valor / VALOR_DOLAR));
+                break
+            case DOLAR_REAL:
+                document.write(("Valor em Reais: " + valor * VALOR_DOLAR));
+                break
+            case REAL_EURO:
+                document.write(("Valor em Euro: " + valor / VALOR_EURO));
+                break
+            case EURO_REAL:
+                document.write(("Valor em Reais " + valor * VALOR_EURO));
+                break
+            default:
+                document.write(("Valor em Inválida"));
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
