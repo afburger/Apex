@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9 - Exercício E</title>
+
+    <script>
+
+        // Matriz.
+        var listaEstoque = [
+            [1, "Macarrão", 3.50],
+            [2, "Feijão", 7.69],
+            [3, "Cerveja", 4.70],
+            [4, "Arroz", 5.39]
+        ];
+
+        var listaProdutosComprados = [];
+
+        do {
+            var codigo = Number.parseInt(prompt("Informe o código do produto:"));
+            
+            if (codigo != 0) {
+                var controle = "nao_encontrou";
+
+                for (var idx = 0; idx < listaEstoque.length; idx++) {
+                    
+                    var produto = listaEstoque[idx];
+
+                    if (codigo == produto[0]) {
+
+                        controle = "encontrou";
+
+                        var quantidade = Number.parseFloat(prompt("Informe a quantidade comprada:"));
+
+                        var valorUnitario = produto[2];
+                        var valorTotal = valorUnitario * quantidade;
+
+                        var produtoComprado = [produto[1], quantidade, valorUnitario, valorTotal];
+
+                        listaProdutosComprados.push(produtoComprado);   
+                    }
+
+                }
+
+                if (controle == "nao_encontrou") {
+                    alert("Produto não econtrado!");
+                }
+            }        
+
+        } while (codigo != 0);
+
+        var totalCompra = 0;
+
+        for (var idxComprados = 0; idxComprados < listaProdutosComprados.length; idxComprados++) {
+            var produtoImpresso = listaProdutosComprados[idxComprados];
+            var valorTotalProduto = produtoImpresso[3]
+            totalCompra = totalCompra + valorTotalProduto;
+
+            document.write(produtoImpresso);
+            document.write("<br>")
+        }
+
+        document.write("O total da compra é de: R$ " + totalCompra);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

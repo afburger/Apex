@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7 D</title>
+
+    <script>
+
+        document.write("Letra D")
+        document.write("<br>") 
+
+        // Forma 3
+
+        var arrayNumeros = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+        var tamanhoArray = arrayNumeros.length;
+
+        for (var indiceLinha = 0; indiceLinha < tamanhoArray; indiceLinha++) {
+            var numeroExibicao = "";
+
+            for (var indiceColuna = 0; indiceColuna < arrayNumeros.length; indiceColuna++) {
+                numeroExibicao = numeroExibicao + arrayNumeros[indiceColuna].toString();
+            }
+
+            document.write(numeroExibicao);
+            document.write("<br>");
+
+            arrayNumeros.splice(0, 1);
+        }
+        
+        
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

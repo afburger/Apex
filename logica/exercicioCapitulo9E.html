@@ -9,11 +9,12 @@
     <script>
 
         var estoqueMercado = [
-            [1, "Macarrão", 3.50],
-            [2, "Feijão", 7.30],
-            [3, "Óleo de Soja", 8.45],
-            [4, "Arroz", 4.29],
-            [5, "Trigo", 8.39],
+            [1, "Macarrão", 3.50],      // 0
+            [2, "Feijão", 7.30],        // 1
+            [3, "Óleo de Soja", 8.45],  // 2
+            [4, "Arroz", 4.29],         // 3
+            [5, "Trigo", 8.39],         // 4
+            [7, "Coca-Cola", 8.39]      // 5
         ];
                      
         
@@ -78,10 +79,13 @@
             soma = soma + valorTotalItem;
 
             document.write("<tr>");
-                document.write("<td>"+ itemComprado[0]+ "</td>");
+                for (ix = 0; ix < itemComprado.length; ix++) {
+                    document.write("<td>"+ itemComprado[ix]+ "</td>");
+                }
+                /* document.write("<td>"+ itemComprado[0]+ "</td>");
                 document.write("<td>"+ itemComprado[1]+ "</td>");
-                document.write("<td>"+ itemComprado[2]+ "</td>");
-                document.write("<td>"+ valorTotalItem + "</td>");
+                document.write("<td>"+ itemComprado[2]+ "</td>"); */
+               /*  document.write("<td>"+ valorTotalItem + "</td>"); */
             document.write("</tr>");
             
         };
