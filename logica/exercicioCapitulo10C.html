@@ -44,6 +44,7 @@
                 var compMarca = document.getElementById("tfMarca");
                 var compValor = document.getElementById("tfValor");
                 var compQuantidade = document.getElementById("tfQuantidade");
+                
                 var nome = compNome.value;
                 var marca = compMarca.value;
                 var valor = Number.parseFloat(compValor.value);
@@ -133,25 +134,33 @@
                 var nomePesquisar = document.getElementById("tfPesquisa").value;
                 var produto;
                 
-                for (var idxProdutos = 0; idxProdutos < produtos.length; idxProdutos++) {
+                var nomeValido = validaUnicidadeProduto(nomePesquisar)
+
+                if (nomeValido) {
+                    for (var idxProdutos = 0; idxProdutos < produtos.length; idxProdutos++) {
                     
-                    var produtoArray = produtos[idxProdutos];
-                    if (produtoArray[0] == nomePesquisar) {
-                        produto = produtoArray;
+                        var produtoArray = produtos[idxProdutos];
+                        if (produtoArray[0] == nomePesquisar) {
+                            produto = produtoArray;
+                        }
                     }
+
+                    var compNome = document.getElementById("tfNome");
+                    var compMarca = document.getElementById("tfMarca");
+                    var compValor = document.getElementById("tfValor");
+                    var compQuantidade = document.getElementById("tfQuantidade");
+
+                    produto[0] = compNome.value;
+                    produto[1] = compMarca.value;
+                    produto[2] = Number.parseFloat(compValor.value);
+                    produto[3] = Number.parseInt(compQuantidade.value);
+
+                    alert("Produto " + nome + " alterado com sucesso!");
+                } else {
+                    alert("Produto já cadastrado!");
                 }
 
-                var compNome = document.getElementById("tfNome");
-                var compMarca = document.getElementById("tfMarca");
-                var compValor = document.getElementById("tfValor");
-                var compQuantidade = document.getElementById("tfQuantidade");
-
-                produto[0] = compNome.value;
-                produto[1] = compMarca.value;
-                produto[2] = Number.parseFloat(compValor.value);
-                produto[3] = Number.parseInt(compQuantidade.value);
-
-                alert("Produto " + nome + " alterado com sucesso!");
+                
             }
 
             // Função para excluir um produto

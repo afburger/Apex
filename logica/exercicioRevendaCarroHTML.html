@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de carros</title>
+
+    <script>
+        var carros = [];
+
+        function cadastrar() {
+            
+            var marca = document.getElementById("tfMarca").value;
+            var modelo = document.getElementById("tfModelo").value;
+            var potencia = Number.parseInt(document.getElementById("nfPotencia").value);
+            var porta = Number.parseInt(document.getElementById("nfPortas").value);
+
+            carros.push([marca, modelo, potencia, porta]);
+
+            alert("Carro " + modelo + " cadastrado com sucesso!")
+        }
+
+        function listarCarros() {
+            imprimeListaCarros(carros);
+        }
+
+        function imprimeListaCarros(lista) {
+            var paragrafo = document.getElementById("listaCarros");
+
+            paragrafo.innerHTML = "";
+
+            for (var idx = 0; idx < lista.length; idx++) {
+                var carro = lista[idx];
+
+                paragrafo.innerHTML += "Marca: " + carro[0] + " Modelo: " + carro[1] + " Potência em cv: " + carro[2] + " Quantidade de portas: " + carro[3];
+                paragrafo.innerHTML += "<br>";
+            }
+        }
+
+        function pesquisar() {
+            var numeroPesquisa = Number.parseInt(document.getElementById("nfPesquisa").value);
+            var carrosPesquisa = [];
+            for (var idx = 0; idx < carros.length; idx++) {
+                var carro = carros[idx];
+                if (carro[3] == numeroPesquisa) {
+                    carrosPesquisa.push(carro);
+                }
+            }
+            imprimeListaCarros(carrosPesquisa);
+        }
+
+        function excluir() {
+            var modeloExclusao = document.getElementById("tfExclusao").value;
+            var carrosExcluir = [];
+            for (var idx = 0; idx < carros.length; idx++) {
+                var carro = carros[idx];
+                if (carro[1] == modeloExclusao) {
+                    carrosExcluir.push(idx);
+                }
+            }
+
+            for (var idxEx = 0; idxEx < carrosExcluir; idxEx++) {
+                carros.splice(carrosExcluir[idxEx], 1);
+            }
+
+            imprimeListaCarros(carros);
+        }
+
+    </script>
+
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Marca" id="tfMarca">
+        <br>
+        <input type="text" placeholder="Modelo" id="tfModelo">
+        <br>
+        <input type="number" placeholder="Potência" id="nfPotencia">
+        <br>
+        <input type="number" placeholder="Quantidade de portas" id="nfPortas">
+        <br>
+        <input type="button" value="Cadastrar" onclick="cadastrar()">
+        <br>
+        <input type="button" value="Listar" onclick="listarCarros()">
+        <br>
+        <input type="number" placeholder="Pesquise pela quantidade de portas" id="nfPesquisa">
+        <input type="button" value="Pesquisar por portas" onclick="pesquisar()">
+
+        <input type="text" placeholder="Digite o modelo para excluao" id="tfExclusao">
+        <input type="button" value="Excluir modelo" onclick="excluir()">
+
+        <p id="listaCarros">
+
+        </p>
+    </form>
+</body>
+</html>

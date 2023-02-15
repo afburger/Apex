@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de carros</title>
+
+    <script>
+        var carros = [
+            ["Volks", "Fusca", 47, 2],
+            ["Ford", "Belina", 52, 4],
+            ["Chevrolet", "Opala", 90, 4]
+        ];
+
+        document.write("Listagem de todos os veículos");
+        document.write("<br>");
+
+        // Percorrer a matriz
+        for (var idx = 0; idx < carros.length; idx++) {
+            var carro = carros[idx];
+            document.write("Marca: " + carro[0] + " Modelo: " + carro[1] + " Potência em cv: " + carro[2] + " Quantidade de portas: " + carro[3]);
+            document.write("<br>");
+        }
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+        document.write("Listagem dos carros de 4 portas");
+        document.write("<br>");
+
+        for (var idx = 0; idx < carros.length; idx++) {
+            var carro = carros[idx];
+            if (carro[3] == 4) {
+                document.write("Marca: " + carro[0] + " Modelo: " + carro[1] + " Potência em cv: " + carro[2] + " Quantidade de portas: " + carro[3]);
+                document.write("<br>");
+            }
+        }
+
+        var listaCarros4Portas = [];
+        for (var idx = 0; idx < carros.length; idx++) {
+            var carro = carros[idx];
+            if (carro[3] == 4) {
+                listaCarros4Portas.push(carro[1]);
+            }
+        }
+        document.write("<br>");
+        document.write("Listagem do array de carros com 4 portas");
+        document.write("<br>");
+        document.write(listaCarros4Portas)
+
+
+        document.write("<br>");
+        document.write("Listagem sem opala");
+        document.write("<br>");
+       
+        var modeloRemover = "Opala";
+        var indicesParaExclusao = []
+        
+        for (var idx = 0; idx < carros.length; idx++) {
+            var carro = carros[idx];
+            if (carro[1] == modeloRemover) {
+                indicesParaExclusao.push(idx)
+            }
+        }
+
+        for (var idx = 0; idx < indicesParaExclusao.length; idx++) {
+            var indiceExclusao = indicesParaExclusao[idx];
+            carros.splice(indiceExclusao, 1);
+        }
+        
+        document.write("<br>");
+        document.write(carros)
+
+        document.write("<br>");
+        document.write("Adicionar Kombi");
+        document.write("<br>");
+
+        var kombi = ["Volks", "Kombi", 67, 3];
+        carros.push(kombi);
+
+        document.write("<br>");
+        document.write(carros)
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
