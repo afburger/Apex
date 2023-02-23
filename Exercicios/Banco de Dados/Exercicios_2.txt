@@ -1,0 +1,27 @@
+criar um novo banco de dados com o nome de garagem
+
+criar uma tabela "carro" com os seguintes atributos: 
+	codigo (INT), 
+	Marca (VARCHAR), 
+	Modelo (VARCHAR),
+	Placa (VARCHAR),
+	Categoria necessárias da CNH (VARCHAR)
+
+Popular a mesma com pelo menos 8 modelos diferentes
+
+criar uma tabela "proprietario" com os seguintes atributos: 
+	codigo (INT), 
+	nome (VARCHAR), 
+	idade (INT),
+	Categoria da CNH (VARCHAR)
+	Número da CNH (VARCHAR)
+
+Popular a mesma com pelo menos 5 proprietarios diferentes
+
+Selecionar todos os modelos da categoria C
+
+Selecionar todos os motoristas com categoria C e idade menor de 30 anos
+Excluir todos os motoristas com categoria C e idade menor de 30 anos
+Alterar todos os motoristas que possuem a categoria C e mais de 35 anos para a categoria D
+
+
