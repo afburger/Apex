@@ -1,52 +1,27 @@
--- 1. Criar uma base de dados chamada exercicio_joins
-CREATE DATABASE exercicio_joins;
+-- Implementando o exerc√≠cio anterior de Joins, crie uma View contendo as
+-- seguintes funcionalidades:
+-- 1. Listar o nome do cliente e o nome do curso.
+CREATE VIEW clientesCurso AS SELECT clientes.cliente, cursos.curso FROM clientes INNER JOIN cursos on cursos.codigo = clientes.codigo_curso;
+SELECT * FROM clientesCurso;
+-- 2. Listar todos os cursos e o nome dos clientes que fazem determinado curso,
+-- caso n√£o exista cliente para determinado curso, dever√° aparecer null no
+-- nome do cliente.
+CREATE VIEW cursosClientes AS SELECT cursos.curso, clientes.cliente FROM cursos LEFT JOIN  clientes on clientes.codigo_curso = cursos.codigo;
+SELECT * FROM cursosClientes;
 
-USE exercicio_joins;
+-- 3. Exibir o nome dos cursos e a quantidade de clientes cadastrados em cada curso.
+CREATE VIEW quantidadeClientes AS SELECT cursos.curso, COUNT(clientes.cliente) AS contagemClientes FROM cursos LEFT JOIN  clientes on clientes.codigo_curso = cursos.codigo GROUP BY cursos.curso;
+SELECT * FROM quantidadeClientes;
 
--- 2. Implemente a tabela cursos , com os seguintes campos:
-CREATE TABLE cursos (
-	codigo INT IDENTITY(1,1),
-	curso VARCHAR(30),
-	PRIMARY KEY(codigo)
-);
+-- 4. Exibir em ordem alfab√©tica o nome dos clientes.
+CREATE VIEW clientesOrdenados AS SELECT TOP(100) clientes.cliente FROM clientes ORDER BY clientes.cliente;
+SELECT * FROM clientesOrdenados;
 
--- 3. Desenvolva a tabela clientes, com os seguintes campos:
-CREATE TABLE clientes (
-	codigo INT IDENTITY(1,1),
-	cliente VARCHAR(30),
-	codigo_curso INT,
-	PRIMARY KEY(codigo),
-	FOREIGN KEY(codigo_curso) REFERENCES cursos(codigo)
-);
+CREATE VIEW clientesOrdenados AS SELECT clientes.cliente FROM clientes;
+SELECT * FROM clientesOrdenados ORDER BY cliente;
 
--- 4. Cadastre os cursos:
-INSERT INTO cursos (curso) VALUES
-('Java'),
-('C#'),
-('Python'),
-('PHP'),
-('Node.js');
-
--- 5. Cadastre os seguintes clientes:
-INSERT INTO clientes (cliente, codigo_curso) VALUES
-('Larissa', 3),
-('Gabriel', 1),
-('Jean', 1),
-('Gabriela', 2),
-('Robson', 3),
-('Isabella', 3),
-('Eduardo', 2),
-('Juliana', 3),
-('Carlos', 2),
-('Lorena', 1)
-;
-
--- 6. Liste o nome dos clientes e o nome dos cursos que cada um est· participando.
-SELECT clientes.cliente, cursos.curso FROM clientes INNER JOIN cursos ON cursos.codigo = clientes.codigo_curso;
-
--- 7. Contar a quantidade de cursos adquiridos pelos clientes. Exiba o nome e a
--- quantidade desses cursos. Ser· obrigatÛrio a exibiÁ„o de todos os cursos,
--- independente se h· clientes realizando esse curso.
-SELECT cursos.curso, COUNT(clientes.cliente) FROM clientes RIGHT JOIN cursos ON cursos.codigo = clientes.codigo_curso GROUP BY cursos.curso;
-
-SELECT cursos.curso, COUNT(clientes.cliente) FROM cursos LEFT JOIN clientes ON clientes.codigo_curso = cursos.codigo GROUP BY cursos.curso;
+-- 5. Excluir todas as Views criadas.
+DROP VIEW clientesCurso;
+DROP VIEW cursosClientes;
+DROP VIEW quantidadeClientes;
+DROP VIEW clientesOrdenados;
