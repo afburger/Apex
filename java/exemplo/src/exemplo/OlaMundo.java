@@ -13,12 +13,6 @@ public class OlaMundo {
 		int numero = 5;
 		boolean aberto = false;
 		String sobrenome = null;
-		
-		if (nome != null) {
-			nome.concat("abc");
-		} else if (nome == "andre"){
-			nome = "abc";
-		}
 	}
 	
 	

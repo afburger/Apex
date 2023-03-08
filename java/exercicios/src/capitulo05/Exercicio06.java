@@ -1,6 +1,6 @@
-package exercicio;
+package capitulo05;
 
-public class Inical {
+public class Exercicio06 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
