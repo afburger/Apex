@@ -18,11 +18,18 @@ public class Exercicio04 {
 
 		scan.close();
 		
-		if (nota >= 6) {
-			System.out.println("Aprovado!");
-		} else {
-			System.out.println("Reprovado!");
-		}
+		
+//		String situacao;		
+//		if (nota >= 6) {
+//			situacao = "Aprovado!";
+//		} else {
+//			situacao = "Reprovado!";
+//		}
+		
+		// Utilizando operador ternário
+		String situacao = nota >= 6 ? "Aprovado" : "Reprovado";
+		
+		System.out.println(situacao);
 	}
 
 }
