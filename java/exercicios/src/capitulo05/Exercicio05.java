@@ -1,5 +1,7 @@
 package capitulo05;
 
+import java.util.Scanner;
+
 /**
  * 5. Escreva um programa que solicite as 3 notas de um aluno 
  * e em seguida calcule o valor da média das notas. 
@@ -12,8 +14,27 @@ package capitulo05;
 public class Exercicio05 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Digite a nota 1:");
+		int notaUm = scan.nextInt();
+		System.out.println("Digite a nota 2:");
+		int notaDois = scan.nextInt();
+		System.out.println("Digite a nota 3:");
+		int notaTres = scan.nextInt();
+		
+		scan.close();
+		
+		double media = (notaUm + notaDois + notaTres) / 3;
+		
+		if (media >= 9) {
+			System.out.println("Conceito A!");
+		} else if (media < 9 && media >= 7) {
+			System.out.println("Conceito B!");
+		} else if (media >= 5) {
+			System.out.println("Conceito C!");
+		} else {
+			System.out.println("Conceito Insulficiente!");
+		}
 	}
 
 }

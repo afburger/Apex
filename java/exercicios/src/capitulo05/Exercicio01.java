@@ -13,6 +13,14 @@ import java.util.Scanner;
 public class Exercicio01 {
 
 	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Digite um número:");
+//		int numero = Integer.parseInt(scan.nextLine());
+		int numero = scan.nextInt();
+		
+		if (numero >= 5 && (numero % 5) == 0) {
+			System.out.println("O número " + numero + " informado é divisivel por 5");
+		}
+		scan.close();
 	}
-
 }

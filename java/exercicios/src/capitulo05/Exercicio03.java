@@ -1,5 +1,7 @@
 package capitulo05;
 
+import java.util.Scanner;
+
 /**
  * 3. Escreva um programa que solicite a idade do usuário 
  * e em seguida escreva a mensagem ‘Você é adulto!’ 
@@ -9,7 +11,15 @@ package capitulo05;
 public class Exercicio03 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Digite a idade:");
+		int idade = scan.nextInt();
+
+		scan.close();
+		
+		if (idade >= 18) {
+			System.out.println("Você é adulto!");
+		}
 
 	}
 

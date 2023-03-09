@@ -1,5 +1,7 @@
 package capitulo05;
 
+import java.util.Scanner;
+
 /**
  * 2. Escreva um programa que leia um número informado pelo usuário 
  * e em seguida escreva uma mensagem indicando se o número é par ou impar. 
@@ -9,8 +11,15 @@ package capitulo05;
 public class Exercicio02 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Digite um número:");
+		int numero = scan.nextInt();
+		
+		if (numero % 2 == 0) {
+			System.out.println("O número " + numero + " informado é par");
+		} else {
+			System.out.println("O número " + numero + " informado é ímpar");
+		}
+		scan.close();
 	}
-
 }
