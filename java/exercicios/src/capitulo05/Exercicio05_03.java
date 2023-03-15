@@ -8,7 +8,7 @@ import java.util.Scanner;
  * caso a idade informada seja maior ou igual a 18.
  *
  */
-public class Exercicio03 {
+public class Exercicio05_03 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

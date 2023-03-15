@@ -10,7 +10,7 @@ import java.util.Scanner;
  * e o resto da divisão por 5 deve ser igual a zero.
  *
  */
-public class Exercicio01 {
+public class Exercicio05_01 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

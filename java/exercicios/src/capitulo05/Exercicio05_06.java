@@ -15,7 +15,7 @@ import java.util.Scanner;
  * Caso o usuário tenha informado um número fora do range(1,2,3) apresente a mensagem ‘Opção inválida’.
  *
  */
-public class Exercicio06 {
+public class Exercicio05_06 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

@@ -11,7 +11,7 @@ import java.util.Scanner;
  * se a nota for menor que 5 escreva a mensagem “Conceito Insuficiente”.
  *
  */
-public class Exercicio05 {
+public class Exercicio05_05 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

@@ -9,7 +9,7 @@ import java.util.Scanner;
  * senão escreva a mensagem “Reprovado”.
  *
  */
-public class Exercicio04 {
+public class Exercicio05_04 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
