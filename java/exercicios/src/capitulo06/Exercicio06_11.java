@@ -16,10 +16,13 @@ public class Exercicio06_11 {
 	public static void main(String[] args) {
 		
 		for (int qtdCifrao = 5; qtdCifrao >= 1; qtdCifrao--) {
+			
 			String cifrao = "";
+			
 			for (int i = 0; i < qtdCifrao; i++) {
 				cifrao = cifrao.concat("$");
 			}
+			
 			System.out.println(cifrao);
 		}
 	}

@@ -9,10 +9,13 @@ package capitulo06;
 public class Exercicio06_12 {
 
 	public static void main(String[] args) {
+		
 		int totalSoma = 0;
-		for (int soma = 1; soma <= 50; soma++) {
+		
+		for (int soma = 2; soma < 50; soma++) {
 			totalSoma = totalSoma + soma;
 		}
+		
 		System.out.println("O total da soma dos números de 1 a 50 é: " + totalSoma);
 	}
 }

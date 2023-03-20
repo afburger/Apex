@@ -15,7 +15,6 @@ public class Exercicio06_07 {
 		int fim = 200;
 		
 		do {
-			
 			if (inicio % 2 == 0) {
 				System.out.println(inicio);
 			}
