@@ -1,6 +1,6 @@
 package capitulo09;
 
-public class Vinho {
+public class Vinho extends Bebida {
 
 	private String nomeVinho;
 	private String nomeUva;
@@ -9,30 +9,9 @@ public class Vinho {
 	private double graduaaoAlcoolica;
 	private double temperaturaServico;
 	private String harmonizacao;
-
-	public Vinho() {
-		super();
-	}
+	private boolean aberto;
+	private boolean consumido;
 	
-	public Vinho(
-			String nomeVinho, 
-			String nomeUva, 
-			int anoSafra, 
-			String paisOrigem, 
-			double graduaaoAlcoolica,
-			double temperaturaServico, 
-			String harmonizacao) {
-		
-		this();
-		this.nomeVinho = nomeVinho;
-		this.nomeUva = nomeUva;
-		this.anoSafra = anoSafra;
-		this.paisOrigem = paisOrigem;
-		this.graduaaoAlcoolica = graduaaoAlcoolica;
-		this.temperaturaServico = temperaturaServico;
-		this.harmonizacao = harmonizacao;
-	}
-
 	public String getNomeVinho() {
 		return nomeVinho;
 	}
@@ -69,7 +48,7 @@ public class Vinho {
 		return graduaaoAlcoolica;
 	}
 
-	public void setGraduacaoAlcoolica(double graduaaoAlcoolica) {
+	public void setGraduaaoAlcoolica(double graduaaoAlcoolica) {
 		this.graduaaoAlcoolica = graduaaoAlcoolica;
 	}
 
@@ -89,8 +68,30 @@ public class Vinho {
 		this.harmonizacao = harmonizacao;
 	}
 	
-	@Override
-	public String toString() {
-		return nomeVinho + " - " + nomeUva + " - " + anoSafra; 
+	public boolean isAberto() {
+		return aberto;
 	}
+
+	public void setAberto(boolean aberto) {
+		this.aberto = aberto;
+	}
+	
+	public boolean isConsumido() {
+		return consumido;
+	}
+
+	public void setConsumido(boolean consumido) {
+		this.consumido = consumido;
+	}
+	
+	public void abrirVinho(boolean aberto) throws Exception {
+		this.aberto = aberto;
+	}
+
+	@Override
+	public void getParametrosSave() {
+		// a implementação do jeito que eu quero.
+	}
+	
+	
 }
