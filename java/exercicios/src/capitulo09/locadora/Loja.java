@@ -1,10 +1,17 @@
 package capitulo09.locadora;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Loja {
 
 	public static void main(String[] args) {
 		
 		Produto[] produtos = new Produto[7];
+		List<Produto> produtosList = new ArrayList<Produto>();
+		Map<String, Produto> produtosMap = new HashMap<String, Produto>();
 		
 		Livro livroHP = new Livro("12345");
 		livroHP.setNome("Harry Potter e a pedra filosofal");
@@ -47,16 +54,65 @@ public class Loja {
 		livroHP2.setAutor("Teste");
 		
 		produtos[0] = livroHP;
+		produtosList.add(livroHP);
+		produtosMap.put(livroHP.getCodigoBarra(), livroHP);
+		
 		produtos[1] = cdEhOTchan;
+		produtosList.add(cdEhOTchan);
+		produtosMap.put(cdEhOTchan.getCodigoBarra(), cdEhOTchan);
+		
 		produtos[2] = dvdHP;
+		produtosList.add(dvdHP);
+		produtosMap.put(dvdHP.getCodigoBarra(), dvdHP);
+		
 		produtos[3] = livroAutoAjuda;
+		produtosList.add(livroAutoAjuda);
+		produtosMap.put(livroAutoAjuda.getCodigoBarra(), livroAutoAjuda);
+		
 		produtos[4] = livroJava;
+		produtosList.add(livroJava);
+		produtosMap.put(livroJava.getCodigoBarra(), livroJava);
+		
 		produtos[5] = livroHP1;
+		produtosList.add(livroHP1);
+		produtosMap.put(livroHP1.getCodigoBarra(), livroHP1);
+		
 		produtos[6] = livroHP2;
+		produtosList.add(livroHP2);
+		produtosMap.put(livroHP2.getCodigoBarra(), livroHP2);
 		
 		for (int i = 0; i < produtos.length; i++) {
 			System.out.println(produtos[i]);
 		}
+		
+		System.out.println("");
+		System.out.println("###### Imprimindo o List #########");
+		System.out.println("");
+		
+		Integer indexDvdHp = null;
+		
+		for (int i = 0; i < produtosList.size(); i++) {
+			if (dvdHP.equals(produtosList.get(i))) {
+				indexDvdHp = i;
+			}
+		}
+		
+		System.out.println("");
+		System.out.println("###### Imprimindo o Mapa #########");
+		System.out.println("");
+		
+		System.out.println(produtosMap);
+		
+		Dvd dvdHP2 = new Dvd("65644");
+		dvdHP.setNome("Harry Potter e o prisioneiro");
+		dvdHP.setDuracao(2.30);
+		dvdHP.setPreco(30.75);
+		
+		if (indexDvdHp != null) {
+			produtosList.set(indexDvdHp, dvdHP2);
+		}
+		
+		produtosList.clear();
 		
 		buscaPosicao(livroHP, produtos);
 		buscaPosicao(livroHP1, produtos);
