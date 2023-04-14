@@ -5,6 +5,7 @@ public class ContaCorrente {
 	private static final Double TAXA = 0.005;
 	
 	private Double saldo;
+	private Integer codigo;
 	
 	public ContaCorrente() {
 		super();
@@ -31,5 +32,18 @@ public class ContaCorrente {
 	
 	protected Double getPercentualTaxa() {
 		return TAXA;
+	}
+
+	public Integer getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+	
+	@Override
+	public String toString() {
+		return String.valueOf(codigo) + " - " + saldo;
 	}
 }
